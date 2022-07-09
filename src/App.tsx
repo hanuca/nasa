@@ -1,8 +1,9 @@
-import Meteor from './Components/Meteor'
+import MeteorView from './Components/MeteorView';
+import useMeteors from './Hooks/useMeteors';
 
 const App = () => {
-
-    return <div> Moshe <Meteor name="assadasd" /></div>
+    const meteors = useMeteors();
+    return  <MeteorView meteors={meteors} />
 }
 
 export default App;

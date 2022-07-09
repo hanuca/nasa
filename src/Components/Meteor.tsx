@@ -1,7 +1,4 @@
-
-interface IMeteor {
-    name: string;
-}
+import { IMeteor } from '../Types/Meteor'
 
 const Meteor : React.FC<IMeteor> = ( { name }) => {
 
