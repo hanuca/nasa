@@ -11,10 +11,11 @@ const App = () => {
 
     const filterMeteors = selectedYear ? meteors.filter(item => item?.year === selectedYear) : meteors;
 
-    return (<div>
-        <AutoComplete years={years} setSelectedYear={year => setSelectedYear(year)} />
-        <MeteorView meteors={filterMeteors} />
-    </div>)
+    return (
+        <div>
+            <AutoComplete years={years} setSelectedYear={year => setSelectedYear(year)} />
+            <MeteorView meteors={filterMeteors} />
+        </div>)
 }
 
 export default App;

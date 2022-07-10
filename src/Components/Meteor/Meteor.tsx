@@ -9,11 +9,12 @@ interface IMeteorProps {
 
 const Meteor : React.FC<IMeteorProps> = ({ meteor }) => {
 
-    return (<div className="meteor-container">
-       <MeteorItem label="ID" value={meteor.id} />
-       <MeteorItem label="Name" value={meteor.name} />
-       <MeteorItem label="Year" value={DisplayYear(meteor.year)} />
-    </div>)
+    return (
+        <div className="meteor-container">
+            <MeteorItem label="ID" value={meteor.id} />
+            <MeteorItem label="Name" value={meteor.name} />
+            <MeteorItem label="Year" value={DisplayYear(meteor.year)} />
+        </div>)
 }
 
 export default Meteor;

@@ -14,8 +14,9 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, setSelectedYear })
 
     const filterYears = years.filter(year => year.startsWith(userInput));
 
-    return (<div className="auto-complete-container">
-        <input value={userInput} onChange={e => {
+    return (
+        <div className="auto-complete-container">
+            <input value={userInput} onChange={e => {
                 setUserInput(e.target.value)
                 setHasChange(true);
             }}

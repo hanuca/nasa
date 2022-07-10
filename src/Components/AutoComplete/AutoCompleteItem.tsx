@@ -7,9 +7,10 @@ interface IAutoCompleteItemProps {
 }
 
 const AutoCompleteItem : React.FC<IAutoCompleteItemProps>  = ( { year, selectYear } ) => {
-    return (<div className="auto-complete-item" onClick={() => selectYear(year)}>
-        {DisplayYear(year)}
-    </div>)
+    return (
+        <div className="auto-complete-item" onClick={() => selectYear(year)}>
+            {DisplayYear(year)}
+        </div>)
 }
 
 export default AutoCompleteItem;
