@@ -16,3 +16,7 @@ export interface IMeteor {
     geolocation: IGeoLocation;
 }
 
+export enum MeteorFilterEnum {
+    Empty,
+    JumpToFirstYear
+}

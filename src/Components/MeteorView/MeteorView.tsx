@@ -8,10 +8,11 @@ interface IMeteorView {
 }
 
 const MeteorView : React.FC<IMeteorView> = ({ meteors }) => {
+    const hasMeteor = meteors.length > 0;
     return (
         <div className="meteor-view-container">
-            {meteors.length > 0 && meteors.map(meteor => <div key={meteor.id}> <Meteor meteor={meteor} /> </div>)}
-            {meteors.length === 0 && <EmptyView />}
+            {hasMeteor && meteors.map(meteor => <div key={meteor.id}> <Meteor meteor={meteor} /> </div>)}
+            {!hasMeteor && <EmptyView />}
         </div>)
 }
 
