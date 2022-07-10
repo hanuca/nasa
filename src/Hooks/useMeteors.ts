@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import { IMeteor } from '../Types/Meteor'
 
 const useMeteors = () => {
-    const [meteors, setMeteors] = useState([]);
+    const [meteors, setMeteors] = useState<IMeteor[]>([]);
 
     useEffect(() => {
 
