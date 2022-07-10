@@ -14,6 +14,7 @@ const Meteor : React.FC<IMeteorProps> = ({ meteor }) => {
             <MeteorItem label="ID" value={meteor.id} />
             <MeteorItem label="Name" value={meteor.name} />
             <MeteorItem label="Year" value={DisplayYear(meteor.year)} />
+            <MeteorItem label="Mass" value={meteor.mass} />
         </div>)
 }
 
