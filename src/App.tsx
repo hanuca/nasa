@@ -4,6 +4,7 @@ import MeteorView from './Components/MeteorView';
 import useMeteors from './Hooks/useMeteors';
 import useYears from './Hooks/useYears';
 import AutoComplete from './Components/AutoComplete';
+import MeteorStatusBar from "./Components/MeteorStatusBar";
 
 const App = () => {
     const meteors = useMeteors();
@@ -18,6 +19,7 @@ const App = () => {
                 <AutoComplete years={years} setSelectedYear={year => setSelectedYear(year)} />
             </div>
             <MeteorView meteors={filterMeteors} />
+            {filterMeteors.length > 0 && <MeteorStatusBar meteors={filterMeteors} />}
         </div>)
 }
 

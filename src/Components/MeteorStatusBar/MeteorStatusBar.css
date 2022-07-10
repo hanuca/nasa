@@ -1,0 +1,8 @@
+.meteor-status-bar {
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.meteor-status-bar-sum {
+    font-weight: bold;
+}
