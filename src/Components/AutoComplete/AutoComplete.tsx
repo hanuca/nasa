@@ -20,7 +20,8 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, setSelectedYear })
                 setUserInput(e.target.value)
                 setHasChange(true);
             }}
-            className="auto-complete-input" />
+            className="auto-complete-input"
+            placeholder="enter meteor year" />
            {hasChange && filterYears.map(year => <AutoCompleteItem year={year} selectYear={year => {
                 setUserInput(DisplayYear(year));
                 setSelectedYear(year);

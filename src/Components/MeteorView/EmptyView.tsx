@@ -4,7 +4,7 @@ const EmptyView = () => {
     return (
         <div className="empty-view">
             <div> There is no meteors to present. </div>
-            <div> Please try different filter. </div>
+            <div> Please try to use filter. </div>
         </div>)
 }
 

@@ -10,7 +10,7 @@ const App = () => {
     const years = useYears(meteors);
     const [selectedYear, setSelectedYear] = useState<string>();
 
-    const filterMeteors = selectedYear ? meteors.filter(item => item?.year === selectedYear) : meteors;
+    const filterMeteors = selectedYear ? meteors.filter(item => item?.year === selectedYear) : [];
 
     return (
         <div className="app-container">
