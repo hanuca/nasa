@@ -5,10 +5,10 @@ interface IMeteorView {
     meteors: IMeteor[];
 }
 
-const MeteorView : React.FC<IMeteorView> = ({meteors}) => {
+const MeteorView : React.FC<IMeteorView> = ({ meteors }) => {
 
     return (<div>
-        {meteors.map(meteor => <div key={meteor.id}> <Meteor id={meteor.id} name={meteor.name} /> </div>)}
+        {meteors.map(meteor => <div key={meteor.id}> <Meteor meteor={meteor} /> </div>)}
     </div>)
 
 }

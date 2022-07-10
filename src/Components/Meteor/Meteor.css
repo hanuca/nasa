@@ -1,0 +1,13 @@
+.meteor-container {
+    border: 1px solid red;
+    margin: 10px;
+    padding: 8px
+}
+
+.meteor-item {
+    padding-bottom: 4px;
+}
+
+.meteor-label {
+    font-weight: 500;
+}
