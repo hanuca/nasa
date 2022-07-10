@@ -1,0 +1,1 @@
+export const DisplayYear = (year: string) => !!year ? year.substr(0, year.indexOf('-')) : "";
