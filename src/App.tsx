@@ -13,10 +13,10 @@ const App = () => {
     const meteors = useMeteors();
     const years = useYears(meteors);
     const [selectedYear, setSelectedYear] = useState<string>();
-    const [mass, setSelectedMass] = useState<string>();
+    const [selectedMass, setSelectedMass] = useState<string>();
     const [filterStatus, setFilterStatus] = useState<MeteorFilterEnum>(MeteorFilterEnum.Empty);
 
-    const filteredMeteors = useMeteorFilter(meteors, setSelectedYear, setFilterStatus, selectedYear, mass);
+    const filteredMeteors = useMeteorFilter(meteors, setSelectedYear, setFilterStatus, selectedYear, selectedMass);
 
     const hasMeteors = filteredMeteors.length > 0;
 
@@ -25,13 +25,16 @@ const App = () => {
             <div className="auto-complete-container">
                 <AutoComplete years={years} selectedYear={selectedYear} setSelectedYear={year => {
                     setSelectedYear(year);
+                    setSelectedMass("");
                     setFilterStatus(MeteorFilterEnum.Empty);
                 }} />
             </div>
             <div className="meteor-filter-container">
-                <MeteorFilter setSelectedMass={mass => {
-                    setSelectedMass(mass);
-                    setFilterStatus(MeteorFilterEnum.Empty);
+                <MeteorFilter
+                    selectedMass={selectedMass}
+                    setSelectedMass={mass => {
+                        setSelectedMass(mass);
+                        setFilterStatus(MeteorFilterEnum.Empty);
                 }} />
             </div>
             {hasMeteors && filterStatus === MeteorFilterEnum.JumpToFirstYear &&
