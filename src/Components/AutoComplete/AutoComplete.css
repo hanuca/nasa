@@ -1,5 +1,7 @@
 .auto-complete {
     width: 200px;
+    max-height: 310px;
+    overflow: auto;
 }
 
 .auto-complete-input {
