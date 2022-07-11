@@ -13,7 +13,11 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, selectedYear, setS
     const [hasChange, setHasChange] = useState<boolean>(false);
     const [userInput, setUserInput] = useState<string>("");
 
-    const filterYears = years.filter(year => year.startsWith(userInput));
+    const selectYear = (year: string) => {
+        setUserInput(DisplayYear(year));
+        setSelectedYear(year);
+        setHasChange(false);
+    }
 
     useEffect(() => {
         if (!selectedYear) {
@@ -24,6 +28,8 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, selectedYear, setS
 
     }, [selectedYear]);
 
+    const filterYears = years.filter(year => year.startsWith(userInput));
+
     return (
         <div className="auto-complete">
             <input
@@ -32,6 +38,13 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, selectedYear, setS
                     setUserInput(e.target.value)
                     setHasChange(true);
                 }}
+                onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                        if (filterYears.length === 1) {
+                            selectYear(filterYears[0])
+                        }
+                    }
+                }}
                 className="auto-complete-input"
                 placeholder="enter meteor year"
             />
@@ -39,11 +52,7 @@ const AutoComplete : React.FC<IAutoCompleteProps> = ({ years, selectedYear, setS
                <div key={year}>
                    <AutoCompleteItem
                        year={year}
-                       selectYear={year => {
-                            setUserInput(DisplayYear(year));
-                            setSelectedYear(year);
-                            setHasChange(false);
-                       }}
+                       selectYear={selectYear}
                    />
                </div>)}
 
