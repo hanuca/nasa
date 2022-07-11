@@ -13,13 +13,13 @@ const useMeteorFilter = (meteors: IMeteor[],
     const meteorsFilterByYear =  meteors.filter(item => item?.year === selectedYear);
 
     if (!selectedMass) {
-        return  meteorsFilterByYear;
+        return meteorsFilterByYear;
     }
 
     const filterByMass = meteorsFilterByYear.filter(meteor => parseInt(meteor.mass) > parseInt(selectedMass));
 
     if (filterByMass.length > 0) {
-        return  filterByMass;
+        return filterByMass;
     }
 
     const meteorThatContainThisMass = meteors.filter(meteor => parseInt(meteor.mass) > parseInt(selectedMass));
