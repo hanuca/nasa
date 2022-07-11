@@ -1,4 +1,3 @@
-import {useEffect, useState} from "react";
 import "./MeteorFilter.css";
 
 interface IMeteorFilterProps {
@@ -9,28 +8,13 @@ interface IMeteorFilterProps {
 
 const MeteorFilter : React.FC<IMeteorFilterProps> = ( { selectedMass, setSelectedMass }) => {
 
-    const [mass, setMass] = useState<string>();
-
-    useEffect(() => {
-
-        if (selectedMass === undefined) {
-            return;
-        }
-
-        setMass(selectedMass);
-
-    }, [selectedMass])
-
     return (
         <input
             className="meteor-filter"
             type="number"
             placeholder="set meteor mass"
-            value={mass}
-            onChange={e => {
-                setMass(e.target.value);
-                setSelectedMass(e.target.value);
-            }}
+            value={selectedMass}
+            onChange={e => setSelectedMass(e.target.value)}
         />)
 }
 
